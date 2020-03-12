@@ -1,14 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<name>DiscordMusicBot</name>
-	<description></description>
+	<description>A simple Discord music bot made with Discord4J.</description>
 	<url>https://github.com/FerMod/DiscordMusicBot</url>
 	<inceptionYear>2020</inceptionYear>
 
-	<groupId>com.fermod</groupId>
-	<artifactId>discord-music-bot</artifactId>
+	<groupId>com.github.fermod.dmusicbot</groupId>
+	<artifactId>dmusicbot</artifactId>
 	<version>0.1.0-beta</version>
 	<packaging>jar</packaging>
 
@@ -56,7 +57,11 @@
 			<name>GNU General Public License v3.0</name>
 			<url>https://raw.githubusercontent.com/FerMod/DiscordMusicBot/master/LICENSE</url>
 			<distribution>repo</distribution>
-			<comments>Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.</comments>
+			<comments>Permissions of this strong copyleft license are conditioned on making available complete source
+				code of licensed works and modifications, which include larger works using a licensed work, under the
+				same license. Copyright and license notices must be preserved. Contributors provide an express grant of
+				patent rights.
+			</comments>
 		</license>
 	</licenses>
 
@@ -147,13 +152,11 @@
 		</dependency>
 
 		<!-- Discord4J -->
-		<dependencies>
-			<dependency>
-				<groupId>com.discord4j</groupId>
-				<artifactId>discord4j-core</artifactId>
-				<version>${com.discord4j.version}</version>
-			</dependency>
-		</dependencies>
+		<dependency>
+			<groupId>com.discord4j</groupId>
+			<artifactId>discord4j-core</artifactId>
+			<version>${com.discord4j.version}</version>
+		</dependency>
 
 		<!-- Logback -->
 		<dependency>
