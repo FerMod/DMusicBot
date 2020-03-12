@@ -1,0 +1,243 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<name>DiscordMusicBot</name>
+	<description></description>
+	<url>https://github.com/FerMod/DiscordMusicBot</url>
+	<inceptionYear>2020</inceptionYear>
+
+	<groupId>com.fermod</groupId>
+	<artifactId>discord-music-bot</artifactId>
+	<version>0.1.0-beta</version>
+	<packaging>jar</packaging>
+
+	<developers>
+		<developer>
+			<id>FerMod</id>
+			<name>Ferran Tudela</name>
+			<email>tudelaigarcia@gmail.com</email>
+			<url>https://github.com/FerMod</url>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<timezone>Europe/Madrid</timezone>
+		</developer>
+		<!-- 
+		<developer>
+			<id></id>
+			<name></name>
+			<email></email>
+			<url></url>
+			<roles>
+				<role></role>
+			</roles>
+			<timezone></timezone>
+		</developer>
+		-->
+	</developers>
+
+	<!--
+	<contributors>
+		<contributor>
+			<name></name>
+			<email></email>
+			<url>https://github.com/</url>
+			<roles>
+				<role></role>
+			</roles>
+			<timezone></timezone>
+		</contributor>
+	</contributors>
+	-->
+
+	<licenses>
+		<license>
+			<name>GNU General Public License v3.0</name>
+			<url>https://raw.githubusercontent.com/FerMod/DiscordMusicBot/master/LICENSE</url>
+			<distribution>repo</distribution>
+			<comments>Permissions of this strong copyleft license are conditioned on making available complete source code of licensed works and modifications, which include larger works using a licensed work, under the same license. Copyright and license notices must be preserved. Contributors provide an express grant of patent rights.</comments>
+		</license>
+	</licenses>
+
+	<ciManagement>
+		<system>TravisCI</system>
+		<url>https://travis-ci.org/FerMod/DiscordMusicBot</url>
+	</ciManagement>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub FerMod Maven Packages</name>
+			<url>https://maven.pkg.github.com/FerMod/DiscordMusicBot</url>
+		</repository>
+	</distributionManagement>
+
+	<scm>
+		<connection>scm:git:https://github.com/FerMod/DiscordMusicBot.git</connection>
+		<developerConnection>scm:git:https://github.com/FerMod/DiscordMusicBot.git</developerConnection>
+		<tag>master</tag>
+		<url>https://github.com/FerMod/DiscordMusicBot</url>
+	</scm>
+
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/FerMod/DiscordMusicBot/issues</url>
+	</issueManagement>
+
+	<properties>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+
+		<!-- Dependencies Versions -->
+		<junit.jupiter.version>5.6.0</junit.jupiter.version>
+		<junit.platform.version>1.6.0</junit.platform.version>
+		<!-- <apache.logging.log4j.version>2.11.2</apache.logging.log4j.version> -->
+
+		<!-- Plugins Versions -->
+		<maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+		<maven.surefire.plugin.version>3.0.0-M4</maven.surefire.plugin.version>
+		<maven.site.plugin.version>3.8.2</maven.site.plugin.version>
+		<maven.project.info.reports.plugin.version>3.0.0</maven.project.info.reports.plugin.version>
+		<maven.jxr.plugin.version>3.0.0</maven.jxr.plugin.version>
+		<maven.javadoc.plugin.version>3.1.1</maven.javadoc.plugin.version>
+
+	</properties>
+
+	<dependencies>
+
+		<!-- Junit 5 -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-runner</artifactId>
+			<version>${junit.platform.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Junit 5 experimental feature -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-params</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Log4j2 -->
+		<!--
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${apache.logging.log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${apache.logging.log4j.version}</version>
+		</dependency>
+		-->
+
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<!-- Compiles the sources the project -->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+			</plugin>
+
+			<!-- Allows to run unit tests. Requires Surefire version 2.22.1 or higher -->
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire.plugin.version}</version>
+				<configuration>
+					<!-- Sets the VM argument line used when unit tests are run -->
+					<argLine>${surefireArgLine}</argLine>
+				</configuration>
+			</plugin>
+
+			<!-- Allows to run integration tests -->
+			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>${maven.surefire.plugin.version}</version>
+			</plugin>
+
+			<!-- Generates a site for the project -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>${maven.site.plugin.version}</version>
+				<configuration>
+					<outputDirectory>${basedir}/docs/site</outputDirectory>
+				</configuration>
+			</plugin>
+
+			<!-- Generates Javadocs as standalone -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven.javadoc.plugin.version}</version>
+				<configuration>
+					<outputDirectory>${basedir}/docs/site</outputDirectory>
+					<nohelp>true</nohelp>
+					<show>private</show>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<reporting>
+		<plugins>
+
+			<!-- Generates Javadocs as part of the site generation -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven.javadoc.plugin.version}</version>
+				<configuration>
+					<show>private</show>
+				</configuration>
+			</plugin>
+
+			<!-- Generates reports information about the project -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>${maven.project.info.reports.plugin.version}</version>
+			</plugin>
+
+			<!-- Generates JUnit reports as part of the site generation -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>${maven.surefire.plugin.version}</version>
+			</plugin>
+
+			<!-- Allows cross reference source code  -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>${maven.jxr.plugin.version}</version>
+			</plugin>
+
+		</plugins>
+	</reporting>
+
+</project>
